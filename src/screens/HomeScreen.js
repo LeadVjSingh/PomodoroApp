@@ -20,7 +20,7 @@ import {
 } from 'react-native-google-mobile-ads';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import {
-  responsiveFontSize,
+  // responsiveFontSize,
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
@@ -326,7 +326,7 @@ const HomeScreen = ({navigation}) => {
   };
 
   useFocusEffect(() => {
-    if (num == !!true) {
+    if (num == !!true) {  
       callFuntion();
     }
 
@@ -348,17 +348,15 @@ const HomeScreen = ({navigation}) => {
     initInterstitial();
   }, []);
 
-  const initInterstitial = async () => {
+  const initInterstitial = async () => { 
     const interstitalAd = InterstitialAd.createForAdRequest(
       TestIds.INTERSTITIAL,
     );
     interstitalAd.addAdEventListener(AdEventType.LOADED, () => {
       setInterstitalAds(interstitalAd);
-      console.log('interstitial ad loaded!');
     });
 
     interstitalAd.addAdEventListener(AdEventType.CLOSED, () => {
-      console.log('interstitial ad closed!');
       setInterstitalAds(null);
       initInterstitial();
     });
@@ -491,7 +489,6 @@ const HomeScreen = ({navigation}) => {
           sound.getNumberOfChannels(),
       );
 
-      // Play the sound with an onEnd callback
       sound.play(success => {
         if (success) {
           console.log('successfully finished playing');

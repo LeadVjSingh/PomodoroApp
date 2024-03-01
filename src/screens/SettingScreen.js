@@ -7,6 +7,11 @@ import {
   ScrollView,
   Linking,
 } from 'react-native';
+import {
+  BannerAd,
+  TestIds,
+  BannerAdSize,
+} from 'react-native-google-mobile-ads';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {responsiveScreenWidth} from 'react-native-responsive-dimensions';
@@ -670,6 +675,9 @@ const SettingScreen = () => {
             </View>
           </TouchableOpacity>
         </View>
+        <View >
+          <BannerAd unitId={TestIds.BANNER} size={BannerAdSize.FULL_BANNER} />
+        </View>
       </View>
     </ScrollView>
   );
@@ -680,6 +688,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
+  },
+  bannerAd: {
+    position: 'relative',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'lightgray', // Example background color
+    height: 60, // Adjust the height as needed
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    marginBottom: 0,
+    marginTop: 540,
+    zIndex: 1,
   },
   BackButtonText: {
     fontSize: responsiveScreenWidth(6),
