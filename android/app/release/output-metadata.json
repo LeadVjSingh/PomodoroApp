@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.pomodorofocustimerapp",
+  "applicationId": "com.pomodoroapp",
   "variantName": "release",
   "elements": [
     {

@@ -1,4 +1,4 @@
-package com.pomodorofocustimerapp;
+package com.pomodoroapp;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
