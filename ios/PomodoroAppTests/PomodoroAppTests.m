@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface pomodorofocustimerappTests : XCTestCase
+@interface pomodorofocustimerapplicationTests : XCTestCase
 
 @end
 
-@implementation pomodorofocustimerappTests
+@implementation pomodorofocustimerapplicationTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

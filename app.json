@@ -1,6 +1,6 @@
 {
-  "name": "pomodorofocustimerapp",
-  "displayName": "pomodorofocustimerapp",
+  "name": "pomodorofocustimerapplication",
+  "displayName": "pomodorofocustimerapplication",
   "react-native-google-mobile-ads": {
     "android_app_id": "ca-app-pub-4455546006290247~7040530039"
   }
