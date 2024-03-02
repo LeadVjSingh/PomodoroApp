@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "pomodorofocustimerapplication.app"
-               BlueprintName = "pomodorofocustimerapplication"
-               ReferencedContainer = "container:pomodorofocustimerapplication.xcodeproj">
+               BuildableName = "pomodorofocustimerapp.app"
+               BlueprintName = "pomodorofocustimerapp"
+               ReferencedContainer = "container:pomodorofocustimerapp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "pomodorofocustimerapplicationTests.xctest"
-               BlueprintName = "pomodorofocustimerapplicationTests"
-               ReferencedContainer = "container:pomodorofocustimerapplication.xcodeproj">
+               BuildableName = "pomodorofocustimerappTests.xctest"
+               BlueprintName = "pomodorofocustimerappTests"
+               ReferencedContainer = "container:pomodorofocustimerapp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "pomodorofocustimerapplication.app"
-            BlueprintName = "pomodorofocustimerapplication"
-            ReferencedContainer = "container:pomodorofocustimerapplication.xcodeproj">
+            BuildableName = "pomodorofocustimerapp.app"
+            BlueprintName = "pomodorofocustimerapp"
+            ReferencedContainer = "container:pomodorofocustimerapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "pomodorofocustimerapplication.app"
-            BlueprintName = "pomodorofocustimerapplication"
-            ReferencedContainer = "container:pomodorofocustimerapplication.xcodeproj">
+            BuildableName = "pomodorofocustimerapp.app"
+            BlueprintName = "pomodorofocustimerapp"
+            ReferencedContainer = "container:pomodorofocustimerapp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

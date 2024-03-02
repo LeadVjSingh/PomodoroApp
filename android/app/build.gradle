@@ -73,9 +73,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.pomodorofocustimerapplication"
+    namespace "com.pomodorofocustimerapp"
     defaultConfig {
-        applicationId "com.pomodorofocustimerapplication"
+        applicationId "com.pomodorofocustimerapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
