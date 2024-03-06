@@ -1,17 +1,9 @@
-import React, {useRef} from 'react';
-import {
-  View,
-  Image,
-  Dimensions,
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-} from 'react-native';
+import React from 'react';
+import {View, Image, Dimensions, StyleSheet} from 'react-native';
 import Swiper from 'react-native-swiper';
-
-const Screen1 = ({navigation}) => {
+import {BannerAd, TestIds, BannerAdSize} from 'react-native-google-mobile-ads';
+const Screen1 = () => {
   const screenWidth = Dimensions.get('window').width;
-  const swiperRef = useRef(null);
 
   const carouselData = [
     {
@@ -40,21 +32,13 @@ const Screen1 = ({navigation}) => {
     },
   ];
 
-  const handleExit = () => {
-    navigation.navigate('Setting');
-  };
-
-  const goToNextSlide = () => {
-    if (swiperRef.current) swiperRef.current.scrollBy(1);
-  };
-
   return (
     <View style={styles.container}>
       <Swiper
-        ref={swiperRef}
         showsPagination={true}
-        loop={false}
-        autoplay={false} // Set autoplay to false for manual control
+        loop={true}
+        autoplay={true}
+        autoplayTimeout={6}
         paginationStyle={{bottom: 10}}
         activeDotColor="green"
         dotColor="red"
@@ -65,20 +49,12 @@ const Screen1 = ({navigation}) => {
               source={item.image}
               style={{height: 750, width: screenWidth}}
             />
-            {index !== carouselData.length - 1 ? (
-              <TouchableOpacity
-                onPress={goToNextSlide}
-                style={styles.nextButton}>
-                <Text style={styles.buttonText}>Next</Text>
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity onPress={handleExit} style={styles.exitButton}>
-                <Text style={styles.buttonText}>Exit</Text>
-              </TouchableOpacity>
-            )}
           </View>
         ))}
       </Swiper>
+      <View>
+        <BannerAd unitId={TestIds.BANNER} size={BannerAdSize.FULL_BANNER} />
+      </View>
     </View>
   );
 };
@@ -94,28 +70,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  nextButton: {
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-    backgroundColor: 'orange',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 20,
-  },
-  exitButton: {
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-    backgroundColor: '#007AFF',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 20,
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
 });
-

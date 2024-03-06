@@ -75,7 +75,7 @@ android {
 
     namespace "com.pomodoroapp"
     defaultConfig {
-        applicationId "com.pomodorofocustimerapplication"
+        applicationId "com.pomodoroapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

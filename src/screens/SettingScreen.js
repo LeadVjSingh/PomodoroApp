@@ -8,15 +8,10 @@ import {
   Linking,
 } from 'react-native';
 import {
-  InterstitialAd,
+  BannerAd,
   TestIds,
-  AdEventType,
+  BannerAdSize,
 } from 'react-native-google-mobile-ads';
-// import {
-//   BannerAd,
-//   TestIds,
-//   BannerAdSize,
-// } from 'react-native-google-mobile-ads';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {responsiveScreenWidth} from 'react-native-responsive-dimensions';
@@ -38,7 +33,6 @@ const SettingScreen = () => {
   const [vibratee, setVibratee] = useState(true);
   const [autoStartBreak, setAutoStartBreak] = useState(false);
   const [signal, setSignal] = useState(false);
-  const [interstialAds, setInterstitalAds] = useState(null);
 
   useEffect(() => {
     AsyncStorage.getItem('pomodoroTime')
@@ -182,31 +176,6 @@ const SettingScreen = () => {
     signal,
   ]);
 
-  useEffect(() => {
-    initInterstitial();
-  }, []);
-
-  const initInterstitial = async () => {
-    const interstitalAd = InterstitialAd.createForAdRequest(
-      TestIds.INTERSTITIAL,
-    );
-    interstitalAd.addAdEventListener(AdEventType.LOADED, () => {
-      setInterstitalAds(interstitalAd);
-    });
-
-    interstitalAd.addAdEventListener(AdEventType.CLOSED, () => {
-      setInterstitalAds(null);
-      initInterstitial();
-    });
-    interstitalAd.load();
-  };
-
-  const AdMob = async () => {
-    if (!!interstialAds) {
-      interstialAds.show();
-    }
-  };
-
   const incrementPomodoro = () => {
     setPomodoro((pomodoro / 60 + 1) * 60);
   };
@@ -308,11 +277,6 @@ const SettingScreen = () => {
       .catch(error => {
         console.error(error);
       });
-  };
-
-  const functionCall = () => {
-    AdMob();
-    navigation.navigate('Screen1');
   };
 
   return (
@@ -690,7 +654,7 @@ const SettingScreen = () => {
         <View style={styles.TimerContainerTwo}>
           <TouchableOpacity
             style={styles.ResponseButton}
-            onPress={functionCall}>
+            onPress={() => navigation.navigate('Screen1')}>
             <View style={styles.ResponseView}>
               <Text style={styles.ResponseTopText}>{'?'}</Text>
               <Text style={styles.ResponseBottomText}>HOW TO USE?</Text>
@@ -711,9 +675,9 @@ const SettingScreen = () => {
             </View>
           </TouchableOpacity>
         </View>
-        {/* <View >
+        <View >
           <BannerAd unitId={TestIds.BANNER} size={BannerAdSize.FULL_BANNER} />
-        </View> */}
+        </View>
       </View>
     </ScrollView>
   );
